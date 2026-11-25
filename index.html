@@ -3,648 +3,573 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kanwal Ameer Khan — Educator · Baker · Interpreter</title>
+<title>Kanwal Ameer Khan — Bilingual Educator</title>
+<meta name="description" content="Kanwal Ameer Khan — bilingual educator, study handler and Urdu mother-tongue teacher in Malmö, Sweden.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='16' fill='%23141414'/%3E%3Crect x='2' y='2' width='54' height='54' rx='15' fill='%23FFD23F' stroke='%23141414' stroke-width='4'/%3E%3Ctext x='29' y='40' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='26' text-anchor='middle' fill='%23141414'%3EKK%3C/text%3E%3Ccircle cx='49' cy='11' r='6' fill='%23FF5FA2' stroke='%23141414' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&family=Noto+Nastaliq+Urdu:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#fcf4e4;
-  --paper-2:#f4e7cd;
-  --ink:#1c1712;
-  --ink-soft:#6a5f4f;
-  --teach:#138a5a;
-  --bake:#e0688f;
-  --deliver:#2f6fd0;
-  --interpret:#8a55d6;
-  --coral:#ff5a3c;
-  --sun:#ffc23c;
-  --card:#fffaf0;
-  --dot:rgba(28,23,18,.10);
-  --hard:5px 5px 0 var(--ink);
-  --hard-sm:3px 3px 0 var(--ink);
-  --grain:.045;
-  --nav:rgba(252,244,228,.85);
-}
-html[data-theme="dark"]{
-  --paper:#181410;
-  --paper-2:#221b13;
-  --ink:#f6ecd8;
-  --ink-soft:#b4a890;
-  --teach:#2ed18c;
-  --bake:#ff8fb4;
-  --deliver:#5b9bff;
-  --interpret:#b58cff;
-  --coral:#ff7a5e;
-  --sun:#ffd166;
-  --card:#241c14;
-  --dot:rgba(246,236,216,.10);
-  --grain:.06;
-  --nav:rgba(24,20,16,.85);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;
-  overflow-x:hidden;transition:background .5s,color .5s;-webkit-font-smoothing:antialiased;
-  background-image:radial-gradient(var(--dot) 1.5px,transparent 1.6px);background-size:18px 18px;
-}
-body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:var(--grain);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-h1,h2,h3,.disp{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;line-height:1}
-.mono{font-family:'Space Mono',monospace}
-::selection{background:var(--coral);color:var(--paper)}
+  :root{
+    --bg:#FFF4E0; --ink:#141414; --card:#ffffff;
+    --pink:#FF5FA2; --yellow:#FFD23F; --teal:#3BCEAC; --violet:#7B5CFF; --orange:#FF8C42; --sky:#6EC8FF;
+    --b:3px solid var(--ink); --sh:6px 6px 0 var(--ink); --sh-sm:4px 4px 0 var(--ink);
+    --display:'Bricolage Grotesque', system-ui, sans-serif; --mono:'Space Mono', ui-monospace, monospace;
+  }
+  [data-theme="dark"]{ --bg:#17131F; --ink:#F5EFE3; --card:#231D2E; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--display); background:var(--bg); color:var(--ink);
+    line-height:1.55; overflow-x:hidden; transition:background .3s,color .3s;
+    background-image:radial-gradient(color-mix(in srgb,var(--ink) 14%,transparent) 1.2px,transparent 1.2px);
+    background-size:22px 22px;
+  }
+  a{color:inherit}
+  ::selection{background:var(--pink);color:#141414}
 
-/* highlight marker */
-.mark{position:relative;white-space:nowrap}
-.mark::before{content:"";position:absolute;inset:8% -.18em;background:var(--sun);z-index:-1;transform:rotate(-1.4deg);border-radius:3px}
-.mark.c-coral::before{background:var(--coral)}
-.mark.c-teach::before{background:var(--teach)}
+  /* ---------- NAV ---------- */
+  nav{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+      padding:.8rem clamp(1rem,4vw,3rem);background:var(--bg);border-bottom:var(--b)}
+  .logo{font-weight:800;font-size:1.4rem;text-decoration:none;display:flex;align-items:center;gap:.5rem}
+  .logo span{background:var(--yellow);color:#141414;border:var(--b);padding:.05rem .45rem;border-radius:10px;box-shadow:3px 3px 0 var(--ink)}
+  .nav-links{display:flex;gap:.4rem;list-style:none;align-items:center}
+  .nav-links a{font-family:var(--mono);font-size:.8rem;text-decoration:none;padding:.35rem .7rem;border:2px solid transparent;border-radius:999px}
+  .nav-links a:hover{border-color:var(--ink);background:var(--teal);color:#141414}
+  .theme-btn{cursor:pointer;font-size:1.1rem;width:42px;height:42px;border:var(--b);border-radius:50%;background:var(--pink);box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+  .theme-btn:hover{transform:rotate(-15deg) scale(1.05)}
+  .burger{display:none}
+  @media (max-width:760px){
+    .nav-links{position:fixed;inset:64px 0 auto 0;flex-direction:column;background:var(--bg);border-bottom:var(--b);padding:1rem;transform:translateY(-130%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .burger{display:block;cursor:pointer;background:var(--yellow);border:var(--b);border-radius:10px;padding:.3rem .6rem;font-family:var(--mono);font-weight:700;color:#141414}
+  }
 
-/* ---------- NAV ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;
-  padding:.6rem clamp(1rem,4vw,2.6rem);background:var(--nav);backdrop-filter:blur(12px);border-bottom:2.5px solid var(--ink)}
-.brand{display:flex;align-items:center;gap:.6rem;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.05rem}
-.monogram{width:40px;height:40px;border-radius:8px;display:grid;place-items:center;background:var(--coral);color:#fff;
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.1rem;border:2.5px solid var(--ink);box-shadow:var(--hard-sm);transform:rotate(-3deg)}
-.nav-links{display:flex;gap:.2rem}
-.nav-links a{color:var(--ink);text-decoration:none;font-size:.82rem;font-weight:700;padding:.4rem .7rem;border-radius:7px;transition:.2s}
-.nav-links a:hover{background:var(--sun);color:var(--ink);transform:translateY(-2px)}
-.nav-tools{display:flex;gap:.5rem}
-.toolbtn{border:2.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:8px;cursor:pointer;
-  font-family:'Space Mono',monospace;font-weight:700;font-size:.74rem;padding:.4rem .6rem;transition:.18s;box-shadow:var(--hard-sm)}
-.toolbtn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
-.toolbtn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
-.lang-toggle b{color:var(--coral)}
-@media(max-width:900px){.nav-links{display:none}}
+  /* ---------- LAYOUT ---------- */
+  section{padding:clamp(3rem,7vw,6rem) clamp(1rem,5vw,4rem);max-width:1200px;margin:0 auto;position:relative}
+  .sec-title{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .sec-title .tag{font-family:var(--mono);font-size:.85rem;font-weight:700;background:var(--ink);color:var(--bg);padding:.3rem .7rem;border-radius:999px;transform:rotate(-4deg)}
+  .card{background:var(--card);border:var(--b);border-radius:18px;box-shadow:var(--sh);padding:1.6rem;transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
 
-/* ---------- HERO ---------- */
-header.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:7rem clamp(1.2rem,5vw,4rem) 4rem;overflow:hidden}
-.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center;max-width:1200px;margin:0 auto;width:100%}
-.eyebrow{display:inline-flex;font-family:'Space Mono',monospace;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  background:var(--ink);color:var(--paper);padding:.45rem .8rem;border-radius:999px;margin-bottom:1.3rem;transform:rotate(-1.5deg)}
-.hero h1{font-size:clamp(2.8rem,9vw,6.4rem);letter-spacing:-.02em}
-.hero h1 .l2{color:var(--coral);-webkit-text-stroke:2px var(--ink)}
-html[data-theme="dark"] .hero h1 .l2{-webkit-text-stroke:2px var(--ink)}
-.hero .role{font-size:clamp(1.05rem,2.3vw,1.45rem);font-weight:500;color:var(--ink-soft);margin:1.2rem 0 1.6rem;max-width:34ch}
-.hero .role b{color:var(--ink);font-weight:700}
-.hero-cta{display:flex;gap:.8rem;flex-wrap:wrap}
-.btn{text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;padding:.85rem 1.5rem;border-radius:10px;
-  cursor:pointer;border:2.5px solid var(--ink);display:inline-flex;align-items:center;gap:.5rem;transition:.18s;box-shadow:var(--hard)}
-.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
-.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-.btn-primary{background:var(--coral);color:#fff}
-.btn-ghost{background:var(--card);color:var(--ink)}
+  /* ---------- HERO ---------- */
+  .hero{min-height:calc(100vh - 70px);display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center}
+  @media (max-width:900px){.hero{grid-template-columns:1fr;text-align:left}}
+  .greeting{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:700;background:var(--teal);color:#141414;border:var(--b);border-radius:999px;padding:.4rem 1rem;box-shadow:var(--sh-sm);margin-bottom:1.5rem;min-height:2.6rem}
+  .greeting .wave{display:inline-block;animation:wave 1.8s infinite;transform-origin:70% 70%}
+  #greetWord{min-width:4ch;display:inline-block;transition:opacity .3s,transform .3s}
+  #greetWord.urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1.05rem;line-height:1}
+  @keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(14deg)}20%{transform:rotate(-8deg)}40%{transform:rotate(-4deg)}50%{transform:rotate(10deg)}}
+  h1{font-size:clamp(3rem,10vw,7.5rem);font-weight:800;line-height:.9;letter-spacing:-.04em}
+  h1 .line{display:block}
+  h1 .hl{position:relative;display:inline-block;color:#141414;z-index:0}
+  h1 .hl::before{content:"";position:absolute;inset:12% -4% 6% -4%;background:var(--yellow);border:var(--b);border-radius:14px;z-index:-1;transform:rotate(-2deg)}
+  .role{font-family:var(--mono);font-size:clamp(1rem,2.2vw,1.3rem);margin:1.6rem 0 2rem;min-height:2em}
+  .role .caret{display:inline-block;width:.6ch;background:var(--pink);animation:blink 1s steps(1) infinite;margin-left:2px}
+  @keyframes blink{50%{opacity:0}}
+  .contact-row{display:flex;flex-wrap:wrap;gap:.8rem}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-weight:700;font-size:.9rem;text-decoration:none;color:#141414;
+       border:var(--b);border-radius:12px;padding:.7rem 1.1rem;box-shadow:var(--sh-sm);transition:transform .12s,box-shadow .12s;cursor:pointer}
+  .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+  .btn svg{width:18px;height:18px}
+  .b-pink{background:var(--pink)} .b-yellow{background:var(--yellow)} .b-teal{background:var(--teal)} .b-violet{background:var(--violet);color:#fff} .b-orange{background:var(--orange)} .b-sky{background:var(--sky)}
 
-/* sticker cluster (replaces avatar) */
-.cluster{position:relative;display:grid;place-items:center;min-height:380px}
-.stamp{width:clamp(180px,24vw,250px);aspect-ratio:1;border-radius:50%;background:var(--card);border:3px solid var(--ink);
-  display:grid;place-items:center;box-shadow:var(--hard);position:relative;z-index:3}
-.stamp svg{position:absolute;inset:0;animation:spin 26s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.stamp .core{font-family:'Bricolage Grotesque',sans-serif;text-align:center;z-index:2}
-.stamp .core .big{font-size:clamp(2.2rem,5vw,3rem);font-weight:800;line-height:.9}
-.stamp .core .sm{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.1em;color:var(--ink-soft);margin-top:.3rem}
-.sticker{position:absolute;z-index:4;background:var(--card);border:2.5px solid var(--ink);border-radius:12px;padding:.5rem .8rem;
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.9rem;display:flex;align-items:center;gap:.45rem;box-shadow:var(--hard-sm)}
-.sticker .e{font-size:1.2rem}
-.st1{top:4%;left:0%;transform:rotate(-8deg);animation:bob 5s ease-in-out infinite}
-.st2{top:14%;right:-2%;transform:rotate(7deg);animation:bob 6s ease-in-out infinite .6s}
-.st3{bottom:14%;left:-4%;transform:rotate(6deg);animation:bob 5.5s ease-in-out infinite .3s}
-.st4{bottom:4%;right:2%;transform:rotate(-6deg);animation:bob 6.4s ease-in-out infinite .9s}
-.st1{border-color:var(--teach)}.st1 .e{filter:none}
-.st2{border-color:var(--bake)}
-.st3{border-color:var(--deliver)}
-.st4{border-color:var(--interpret)}
-@keyframes bob{50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
-.st1{--r:-8deg}.st2{--r:7deg}.st3{--r:6deg}.st4{--r:-6deg}
-@media(max-width:860px){
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .eyebrow{margin-left:auto;margin-right:auto}.hero .role{margin-left:auto;margin-right:auto}.hero-cta{justify-content:center}
-  .cluster{order:-1;min-height:340px}
-}
+  .hero-art{position:relative;aspect-ratio:1;max-width:420px;width:100%;justify-self:center}
+  .blob{position:absolute;inset:6%;background:var(--violet);border:var(--b);box-shadow:var(--sh);
+        border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;animation:morph 9s ease-in-out infinite;display:grid;place-items:center;overflow:hidden}
+  @keyframes morph{0%,100%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%}33%{border-radius:63% 37% 38% 62% / 56% 63% 37% 44%}66%{border-radius:37% 63% 51% 49% / 37% 35% 65% 63%}}
+  .initials{font-size:clamp(5rem,14vw,9rem);font-weight:800;color:#fff;-webkit-text-stroke:3px #141414;letter-spacing:-.05em;text-shadow:6px 6px 0 #141414}
+  .float{position:absolute;border:var(--b);border-radius:14px;padding:.45rem .8rem;font-family:var(--mono);font-weight:700;font-size:.85rem;box-shadow:var(--sh-sm);color:#141414;animation:bob 4s ease-in-out infinite}
+  .f1{top:2%;left:-4%;background:var(--yellow);transform:rotate(-8deg)}
+  .f2{top:20%;right:-6%;background:var(--teal);animation-delay:-1s}
+  .f3{bottom:10%;left:-8%;background:var(--pink);animation-delay:-2s}
+  .f4{bottom:-2%;right:4%;background:var(--orange);animation-delay:-3s}
+  .f2.urdu{font-family:'Noto Nastaliq Urdu',serif;font-size:1rem;line-height:1.6;padding:.1rem .8rem}
+  @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+  .star{position:absolute;width:56px;top:-4%;right:12%;animation:spin 12s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
 
-/* ---------- SECTION SCAFFOLD ---------- */
-section{padding:clamp(3.5rem,7vw,6rem) clamp(1.2rem,5vw,4rem);position:relative}
-.wrap{max-width:1080px;margin:0 auto}
-.sec-head{margin-bottom:2.6rem}
-.sec-num{font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;color:var(--coral);letter-spacing:.1em}
-.sec-head h2{font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:-.02em;margin:.3rem 0 .5rem}
-.sec-head .sub{color:var(--ink-soft);font-size:1rem;max-width:48ch}
-.reveal{opacity:0;transform:translateY(30px) rotate(-1.5deg);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
+  /* ---------- MARQUEE ---------- */
+  .marquee{border-block:var(--b);background:var(--ink);color:var(--bg);overflow:hidden;transform:rotate(-1.5deg);margin:1rem -2rem;padding:.9rem 0}
+  .marquee-track{display:flex;width:max-content;animation:scroll 28s linear infinite}
+  .marquee span{font-size:clamp(1.3rem,3vw,2rem);font-weight:800;padding:0 1.2rem;white-space:nowrap}
+  .marquee span:nth-child(4n+1)::after{content:"✦";color:var(--yellow);margin-left:2.4rem}
+  .marquee span:nth-child(4n+2)::after{content:"✦";color:var(--pink);margin-left:2.4rem}
+  .marquee span:nth-child(4n+3)::after{content:"✦";color:var(--teal);margin-left:2.4rem}
+  .marquee span:nth-child(4n)::after{content:"✦";color:var(--orange);margin-left:2.4rem}
+  @keyframes scroll{to{transform:translateX(-50%)}}
 
-/* ---------- STATS ---------- */
-.stats{background:var(--ink)}
-.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1000px;margin:0 auto}
-.stat{text-align:center;background:var(--card);border:2.5px solid var(--ink);border-radius:14px;padding:1.4rem .6rem;box-shadow:var(--hard);transition:.2s}
-.stat:nth-child(1){transform:rotate(-1.5deg)}.stat:nth-child(2){transform:rotate(1deg)}
-.stat:nth-child(3){transform:rotate(-1deg)}.stat:nth-child(4){transform:rotate(1.5deg)}
-.stat:hover{transform:rotate(0) translateY(-4px)}
-.stat .num{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.4rem,6vw,3.6rem);font-weight:800;line-height:1;color:var(--coral)}
-.stat .lbl{font-family:'Space Mono',monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);margin-top:.4rem}
-@media(max-width:680px){.stat-grid{grid-template-columns:repeat(2,1fr);gap:1.6rem}}
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem}
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr}}
+  .about-text{font-size:clamp(1.15rem,2.2vw,1.55rem);font-weight:600;background:var(--yellow);color:#141414}
+  .about-text mark{background:var(--pink);color:#141414;padding:0 .25em;border-radius:6px;border:2px solid #141414}
+  .stats{display:grid;gap:1rem}
+  .stat{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem}
+  .stat b{font-size:2.6rem;line-height:1;font-weight:800}
+  .stat small{font-family:var(--mono);font-size:.8rem;line-height:1.3}
 
-/* ---------- SUMMARY ---------- */
-.summary-box{background:var(--sun);border:3px solid var(--ink);border-radius:20px;padding:clamp(1.6rem,4vw,2.8rem);box-shadow:var(--hard);
-  font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(1.2rem,2.6vw,1.7rem);font-weight:500;line-height:1.35;position:relative}
-html[data-theme="dark"] .summary-box{color:#1c1712}
-.summary-box .q{position:absolute;top:-22px;left:24px;font-size:3rem;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  background:var(--ink);color:var(--sun);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:3px solid var(--ink)}
+  /* ---------- EXPERIENCE ---------- */
+  .timeline{position:relative;display:grid;gap:2rem;padding-left:2.5rem}
+  .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:4px;background:repeating-linear-gradient(var(--ink) 0 12px,transparent 12px 22px)}
+  .t-item{position:relative}
+  .t-item::before{content:"";position:absolute;left:-2.5rem;top:1.6rem;width:24px;height:24px;border:var(--b);border-radius:50%;background:var(--pink);box-shadow:2px 2px 0 var(--ink)}
+  .t-item:nth-child(2)::before{background:var(--teal)}
+  .t-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.8rem}
+  .t-head h3{font-size:clamp(1.3rem,2.8vw,1.8rem);line-height:1.15}
+  .pill{font-family:var(--mono);font-size:.78rem;font-weight:700;border:2px solid var(--ink);border-radius:999px;padding:.25rem .7rem;white-space:nowrap;color:#141414}
+  .now{background:var(--teal);position:relative;padding-left:1.4rem}
+  .now::before{content:"";position:absolute;left:.5rem;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:#141414;animation:pulse 1.4s infinite}
+  @keyframes pulse{50%{opacity:.2}}
+  .t-item ul{list-style:none;display:grid;gap:.6rem}
+  .t-item li{padding-left:1.6rem;position:relative}
+  .t-item li::before{content:"→";position:absolute;left:0;font-weight:800;color:var(--violet)}
+  .loc{font-family:var(--mono);font-size:.82rem;opacity:.75;margin-top:.9rem}
 
-/* ---------- FLAVOUR LEGEND + FILTER ---------- */
-.legend{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
-.fbtn{font-family:'Space Mono',monospace;font-weight:700;font-size:.78rem;border:2.5px solid var(--ink);background:var(--card);color:var(--ink);
-  padding:.45rem .8rem;border-radius:999px;cursor:pointer;transition:.18s;display:flex;align-items:center;gap:.35rem;box-shadow:var(--hard-sm)}
-.fbtn:hover{transform:translateY(-2px)}
-.fbtn .dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink)}
-.fbtn[data-f="all"].active{background:var(--ink);color:var(--paper)}
-.fbtn[data-f="teach"].active{background:var(--teach);color:#fff}
-.fbtn[data-f="bake"].active{background:var(--bake);color:#fff}
-.fbtn[data-f="deliver"].active{background:var(--deliver);color:#fff}
-.d-teach{background:var(--teach)}.d-bake{background:var(--bake)}.d-deliver{background:var(--deliver)}.d-interpret{background:var(--interpret)}
+  /* ---------- PROJECT ---------- */
+  .project{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;overflow:hidden}
+  @media (max-width:800px){.project{grid-template-columns:1fr}}
+  .project-viz{background:var(--sky);border-right:var(--b);padding:2rem;display:grid;place-items:center;min-height:280px;position:relative}
+  @media (max-width:800px){.project-viz{border-right:none;border-bottom:var(--b)}}
+  .browser{width:100%;max-width:340px;background:#fff;border:var(--b);border-radius:12px;box-shadow:var(--sh-sm);overflow:hidden;color:#141414}
+  .browser-bar{display:flex;gap:6px;padding:.5rem .7rem;border-bottom:var(--b);background:var(--yellow)}
+  .browser-bar i{width:11px;height:11px;border-radius:50%;border:2px solid #141414;background:#fff}
+  .browser-body{padding:1.1rem;display:grid;gap:.6rem;text-align:center}
+  .browser-body .ur{font-family:'Noto Nastaliq Urdu',serif;font-size:1.5rem;line-height:2}
+  .browser-body .sv{font-weight:800;font-size:1.3rem}
+  .swap{font-family:var(--mono);font-size:.75rem;opacity:.7}
+  .project-info{padding:2rem}
+  .project-info h3{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;margin-bottom:1rem}
+  .project-info p{margin-bottom:1.5rem}
 
-/* ---------- CAREER CARDS ---------- */
-.career-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem}
-@media(max-width:760px){.career-grid{grid-template-columns:1fr}}
-.job{border:3px solid var(--ink);border-radius:16px;padding:1.3rem 1.4rem;background:var(--card);box-shadow:var(--hard);position:relative;overflow:hidden;
-  transition:transform .25s,opacity .35s,box-shadow .2s}
-.job:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:8px 8px 0 var(--ink)}
-.job.hide{display:none}
-.job .flavtex{position:absolute;inset:0;opacity:.14;pointer-events:none}
-.job .accent{position:absolute;top:0;left:0;width:100%;height:8px}
-.job-flav-teach .accent{background:var(--teach)} 
-.job-flav-bake .accent{background:var(--bake)}
-.job-flav-deliver .accent{background:var(--deliver)}
-.job-flav-interpret .accent{background:var(--interpret)}
-.job .top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;margin-top:.4rem}
-.job .pill{font-family:'Space Mono',monospace;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;
-  padding:.2rem .55rem;border-radius:999px;display:inline-flex;align-items:center;gap:.3rem;border:2px solid var(--ink)}
-.job-flav-teach .pill{background:var(--teach)}.job-flav-bake .pill{background:var(--bake)}
-.job-flav-deliver .pill{background:var(--deliver)}.job-flav-interpret .pill{background:var(--interpret)}
-.job .date{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;color:var(--ink-soft);white-space:nowrap;text-align:right}
-.job h3{font-family:'Bricolage Grotesque',sans-serif;font-size:1.25rem;font-weight:800;margin:.6rem 0 .15rem}
-.job .org{font-weight:700;font-size:.92rem}
-.job-flav-teach .org{color:var(--teach)}.job-flav-bake .org{color:var(--bake)}
-.job-flav-deliver .org{color:var(--deliver)}.job-flav-interpret .org{color:var(--interpret)}
-.job .desc{font-size:.9rem;color:var(--ink-soft);margin-top:.5rem;position:relative;z-index:2}
-/* flavour textures */
-.tex-teach{background-image:repeating-linear-gradient(var(--teach) 0 1.5px,transparent 1.5px 22px);background-position:0 40px}
-.tex-bake{background-image:radial-gradient(var(--bake) 1.6px,transparent 1.8px);background-size:14px 14px}
-.tex-deliver{background-image:repeating-linear-gradient(90deg,var(--deliver) 0 1.5px,transparent 1.5px 26px)}
-.tex-interpret{background-image:radial-gradient(circle at 6px 6px,var(--interpret) 2px,transparent 2.4px);background-size:20px 20px}
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.4rem}
+  .edu{position:relative;padding-top:2.6rem}
+  .edu .yr{position:absolute;top:-16px;left:1.2rem;font-family:var(--mono);font-weight:700;border:var(--b);border-radius:10px;padding:.25rem .7rem;box-shadow:3px 3px 0 var(--ink);color:#141414}
+  .edu h3{font-size:1.25rem;line-height:1.2;margin-bottom:.5rem}
+  .edu p{font-family:var(--mono);font-size:.82rem;opacity:.8}
+  .edu:nth-child(odd){transform:rotate(-1deg)} .edu:nth-child(even){transform:rotate(1deg)}
+  .edu:hover{transform:rotate(0) translate(-3px,-3px)}
 
-/* ---------- PROJECT ---------- */
-.proj{background:var(--interpret);border:3px solid var(--ink);border-radius:20px;padding:clamp(1.6rem,4vw,2.6rem);box-shadow:var(--hard);color:#fff;
-  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
-html[data-theme="dark"] .proj{color:#1c1712}
-.proj .ptext{flex:1;min-width:260px}
-.proj h3{font-size:1.6rem;margin-bottom:.5rem}
-.proj p{opacity:.92;font-size:.95rem;max-width:46ch}
-.proj .btn{background:var(--sun);color:var(--ink)}
+  /* ---------- COURSES ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.8rem}
+  .filter{font-family:var(--mono);font-weight:700;font-size:.85rem;cursor:pointer;background:var(--card);color:var(--ink);border:var(--b);border-radius:999px;padding:.4rem 1rem;box-shadow:3px 3px 0 var(--ink);transition:transform .12s}
+  .filter:hover{transform:translate(-2px,-2px)}
+  .filter.active{background:var(--ink);color:var(--bg)}
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+  .course{border:var(--b);border-radius:14px;padding:1.1rem;box-shadow:var(--sh-sm);color:#141414;transition:transform .25s,opacity .25s;display:flex;flex-direction:column;justify-content:space-between;gap:.8rem;min-height:130px}
+  .course.hide{display:none}
+  .course:hover{transform:rotate(-2deg) scale(1.03)}
+  .course h4{font-size:1.1rem;line-height:1.2}
+  .course .meta{font-family:var(--mono);font-size:.75rem;display:flex;justify-content:space-between;gap:.5rem}
+  .course .meta b{background:#141414;color:#fff;border-radius:6px;padding:.05rem .45rem}
 
-/* ---------- EDUCATION ---------- */
-.edu-list{display:flex;flex-direction:column;gap:.9rem}
-.edu{display:grid;grid-template-columns:120px 1fr;gap:1rem;align-items:center;background:var(--card);border:2.5px solid var(--ink);
-  border-radius:12px;padding:1rem 1.2rem;box-shadow:var(--hard-sm);transition:.2s}
-.edu:hover{transform:translateX(5px);box-shadow:5px 5px 0 var(--ink)}
-.edu .yr{font-family:'Space Mono',monospace;font-weight:700;font-size:.82rem;background:var(--ink);color:var(--paper);padding:.3rem .5rem;border-radius:7px;text-align:center}
-.edu .deg{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem}
-.edu .place{color:var(--ink-soft);font-size:.86rem}
-@media(max-width:560px){.edu{grid-template-columns:1fr;gap:.5rem}.edu .yr{justify-self:start}}
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  @media (max-width:900px){.skills-grid{grid-template-columns:1fr}}
+  .skill-card .icon{width:58px;height:58px;border:var(--b);border-radius:14px;display:grid;place-items:center;font-size:1.7rem;margin-bottom:1rem;box-shadow:3px 3px 0 var(--ink)}
+  .skill-card h3{font-size:1.4rem;margin-bottom:.6rem}
+  .chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.8rem}
+  .chip{font-family:var(--mono);font-size:.78rem;border:2px solid var(--ink);border-radius:999px;padding:.2rem .65rem}
+  .lang{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:2px dashed color-mix(in srgb,var(--ink) 35%,transparent)}
+  .lang:last-child{border-bottom:none}
+  .lang strong{font-size:1.1rem}
+  .lang .native{font-family:'Noto Nastaliq Urdu',serif;font-size:.95rem;margin-left:.4rem;opacity:.8}
 
-/* ---------- COURSES ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:.7rem}
-.chip{border:2.5px solid var(--ink);background:var(--card);border-radius:11px;padding:.6rem .9rem;font-size:.86rem;font-weight:600;
-  display:flex;align-items:center;gap:.5rem;box-shadow:var(--hard-sm);transition:.18s}
-.chip:hover{transform:translateY(-3px) rotate(-1deg)}
-.chip .tag{width:10px;height:10px;border-radius:3px;border:2px solid var(--ink);flex-shrink:0}
-.chip .yr{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--ink-soft);font-weight:700}
+  /* ---------- STICKER BOARD ---------- */
+  .board{position:relative;min-height:380px;border:var(--b);border-radius:22px;background:var(--card);box-shadow:var(--sh);overflow:hidden;touch-action:none}
+  .board-hint{position:absolute;bottom:1rem;right:1.2rem;font-family:var(--mono);font-size:.78rem;opacity:.65;pointer-events:none}
+  .board-label{position:absolute;top:1rem;left:1.2rem;font-family:var(--mono);font-weight:700;font-size:.8rem;opacity:.65;pointer-events:none}
+  .sticker{position:absolute;cursor:grab;user-select:none;border:var(--b);border-radius:999px;padding:.7rem 1.3rem;font-weight:800;font-size:clamp(1rem,2vw,1.3rem);box-shadow:var(--sh-sm);color:#141414;white-space:nowrap;transition:box-shadow .15s}
+  .sticker:active,.sticker.dragging{cursor:grabbing;box-shadow:10px 10px 0 var(--ink);z-index:10}
+  .sticker.square{border-radius:16px}
 
-/* ---------- SKILLS ---------- */
-.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-@media(max-width:760px){.skill-grid{grid-template-columns:1fr}}
-.skill{border:3px solid var(--ink);border-radius:16px;padding:1.4rem;background:var(--card);box-shadow:var(--hard);transition:.22s}
-.skill:hover{transform:translateY(-5px) rotate(-1deg)}
-.skill .e{font-size:2rem;display:block;margin-bottom:.6rem}
-.skill h4{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:.3rem}
-.skill p{font-size:.88rem;color:var(--ink-soft)}
-.comp-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
-.comp{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.92rem;background:var(--coral);color:#fff;
-  border:2.5px solid var(--ink);border-radius:999px;padding:.5rem 1rem;box-shadow:var(--hard-sm);transform:rotate(-1.5deg)}
-.comp:nth-child(2){background:var(--teach);transform:rotate(1deg)}
-.comp:nth-child(3){background:var(--deliver);transform:rotate(-1deg)}
+  /* ---------- FOOTER ---------- */
+  footer{border-top:var(--b);background:var(--pink);color:#141414;padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem);text-align:center}
+  footer h2{font-size:clamp(2.4rem,8vw,5.5rem);line-height:.95;font-weight:800;letter-spacing:-.03em;margin-bottom:1.6rem}
+  footer .contact-row{justify-content:center}
+  footer .btn{background:#fff}
+  footer .fine{margin-top:2.5rem;font-family:var(--mono);font-size:.8rem}
 
-/* ---------- INTERESTS ---------- */
-.interests{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
-.intr{background:var(--card);border:3px solid var(--ink);border-radius:16px;padding:1.4rem 1.2rem;text-align:center;min-width:130px;
-  box-shadow:var(--hard);transition:.25s}
-.intr:hover{transform:translateY(-8px) rotate(3deg)}
-.intr .e{font-size:2.4rem;display:block;margin-bottom:.4rem}
-.intr span{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem}
+  .toast{position:fixed;bottom:1.5rem;left:50%;translate:-50% 150%;background:var(--ink);color:var(--bg);font-family:var(--mono);font-weight:700;padding:.8rem 1.4rem;border-radius:12px;transition:translate .3s;z-index:100}
+  .toast.show{translate:-50% 0}
+  .to-top{position:fixed;right:1.2rem;bottom:1.2rem;width:52px;height:52px;border:var(--b);border-radius:50%;background:var(--yellow);box-shadow:var(--sh-sm);font-size:1.4rem;font-weight:800;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;z-index:60;color:#141414}
+  .to-top.show{opacity:1;pointer-events:auto}
+  .to-top:hover{transform:translateY(-4px)}
 
-/* ---------- CONTACT ---------- */
-footer{background:var(--ink);color:var(--paper);padding:clamp(3.5rem,7vw,5.5rem) clamp(1.2rem,5vw,4rem) 2.5rem;
-  background-image:radial-gradient(rgba(255,255,255,.06) 1.5px,transparent 1.6px);background-size:18px 18px}
-.foot-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;max-width:1000px;margin:0 auto}
-@media(max-width:740px){.foot-grid{grid-template-columns:1fr;gap:2rem}}
-footer h2{font-size:clamp(2.2rem,6vw,3.6rem);color:var(--paper)}
-footer h2 .l2{color:var(--sun)}
-.foot-contact{margin-top:1.4rem}
-.foot-contact a,.foot-contact div{display:flex;align-items:center;gap:.7rem;color:var(--paper);text-decoration:none;margin-bottom:.85rem;font-size:.95rem;transition:.2s}
-.foot-contact a:hover{color:var(--sun);transform:translateX(4px)}
-.foot-contact .ic{width:34px;height:34px;border-radius:8px;border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;flex-shrink:0;font-size:.9rem}
-.ref-wrap{display:flex;flex-direction:column;gap:1rem}
-.ref{background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.2);border-radius:14px;padding:1.1rem}
-.ref .lbl{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);font-weight:700}
-.ref h4{font-family:'Bricolage Grotesque',sans-serif;font-size:1.1rem;margin:.35rem 0 .1rem;color:var(--paper)}
-.ref p{font-size:.82rem;opacity:.85}.ref a{color:var(--sun);text-decoration:none;font-size:.82rem}
-.foot-bottom{text-align:center;margin-top:2.6rem;padding-top:1.4rem;border-top:2px solid rgba(255,255,255,.15);font-family:'Space Mono',monospace;font-size:.74rem;opacity:.65}
+  .progress{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--pink),var(--yellow),var(--teal),var(--violet));width:0;z-index:70}
 
-.scroll-top{position:fixed;bottom:1.3rem;right:1.3rem;width:50px;height:50px;border-radius:12px;background:var(--coral);color:#fff;
-  border:2.5px solid var(--ink);cursor:pointer;display:grid;place-items:center;box-shadow:var(--hard-sm);opacity:0;pointer-events:none;
-  transition:.3s;z-index:900;font-size:1.3rem;font-weight:800}
-.scroll-top.show{opacity:1;pointer-events:auto}
-.scroll-top:hover{transform:translateY(-3px)}
+  .reveal{opacity:0;translate:0 40px;transition:opacity .7s cubic-bezier(.2,.7,.2,1),translate .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;translate:0 0}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;translate:none}
+    html{scroll-behavior:auto}
+  }
 </style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 
+<!-- NAV -->
 <nav>
-  <div class="brand"><span class="monogram">K</span><span>Kanwal A. Khan</span></div>
-  <div class="nav-links">
-    <a href="#career" data-i="nav_career">Career</a>
-    <a href="#project" data-i="nav_project">Project</a>
-    <a href="#education" data-i="nav_edu">Education</a>
-    <a href="#courses" data-i="nav_courses">Courses</a>
-    <a href="#skills" data-i="nav_skills">Skills</a>
-    <a href="#contact" data-i="nav_contact">Contact</a>
-  </div>
-  <div class="nav-tools">
-    <button class="toolbtn lang-toggle" id="langBtn"><b>EN</b>·SV</button>
-    <button class="toolbtn" id="themeBtn">🌙</button>
-  </div>
+  <a href="#top" class="logo"><span>KAK</span>.edu</a>
+  <button class="burger" id="burger" aria-label="Menu">MENU</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button></li>
+  </ul>
 </nav>
 
-<header class="hero">
-  <div class="hero-grid">
-    <div class="reveal">
-      <span class="eyebrow" data-i="eyebrow">Educator · Baker · Interpreter</span>
-      <h1>Kanwal<br><span class="l2">Ameer Khan</span></h1>
-      <p class="role" data-i="role">A <b>bilingual educator</b> with a wonderfully mixed CV — from <span class="mark">classrooms</span> to <span class="mark c-coral">bakeries</span> to interpreting booths.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#career" data-i="cta1">See the flavours →</a>
-        <a class="btn btn-ghost" href="#contact" data-i="cta2">Contact</a>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div>
+    <div class="greeting"><span class="wave">👋</span> <span id="greetWord">Hej!</span></div>
+    <h1>
+      <span class="line">Kanwal</span>
+      <span class="line">Ameer <span class="hl">Khan</span></span>
+    </h1>
+    <p class="role"><span id="typed"></span><span class="caret">&nbsp;</span></p>
+    <div class="contact-row">
+      <a class="btn b-pink" href="mailto:kanwalsardar1988@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email me</a>
+      <a class="btn b-sky" href="https://linkedin.com/in/tayyaba-kanwal" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+      <a class="btn b-yellow" href="tel:+46762702376">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>+46 76 270 2376</a>
+    </div>
+  </div>
+
+  <div class="hero-art" aria-hidden="true">
+    <svg class="star" viewBox="0 0 100 100"><path d="M50 0 61 39 100 50 61 61 50 100 39 61 0 50 39 39Z" fill="var(--yellow)" stroke="var(--ink)" stroke-width="5"/></svg>
+    <div class="blob"><span class="initials">KK</span></div>
+    <div class="float f1">📍 Malmö, SE</div>
+    <div class="float f2 urdu">اردو</div>
+    <div class="float f3">🔬 Science + ➗ Math</div>
+    <div class="float f4">🇸🇪 × 🇵🇰</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Urdu</span><span>Svenska</span><span>English</span><span>Science</span><span>Mathematics</span><span>Studiehandledning</span><span>Modersmål</span><span>Inclusion</span>
+    <span>Urdu</span><span>Svenska</span><span>English</span><span>Science</span><span>Mathematics</span><span>Studiehandledning</span><span>Modersmål</span><span>Inclusion</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="sec-title reveal">About me <span class="tag">// hello</span></h2>
+  <div class="about-grid">
+    <div class="card about-text reveal">
+      I'm a <mark>bilingual educator</mark> specialising in language support and <mark>Science &amp; Mathematics</mark> for students who don't yet speak Swedish. I help students get past language barriers and build an inclusive classroom where they can do well academically.
+    </div>
+    <div class="stats">
+      <div class="card stat reveal" style="background:var(--teal);color:#141414"><b data-count="3">0</b><small>languages<br>spoken fluently</small></div>
+      <div class="card stat reveal" style="background:var(--orange);color:#141414"><b data-count="2020" data-plain="1">0</b><small>teaching in<br>Sweden since</small></div>
+      <div class="card stat reveal" style="background:var(--violet);color:#fff"><b data-count="9">0</b><small>additional<br>courses completed</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <h2 class="sec-title reveal">Work experience <span class="tag">// the job</span></h2>
+  <div class="timeline">
+    <article class="card t-item reveal">
+      <div class="t-head">
+        <h3>Study Handler &amp; Mother Tongue Teacher in Urdu</h3>
+        <span class="pill now">Aug 2020 — Present</span>
       </div>
-    </div>
-    <div class="cluster reveal">
-      <div class="stamp">
-        <svg viewBox="0 0 200 200" aria-hidden="true">
-          <defs><path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" fill="none"/></defs>
-          <text font-family="'Space Mono',monospace" font-size="13.5" font-weight="700" letter-spacing="3.5" fill="var(--ink-soft)">
-            <textPath href="#ring" startOffset="0%">· MALMÖ · MULTILINGUAL · EDUCATOR · SINCE 2010 </textPath>
-          </text>
-        </svg>
-        <div class="core"><div class="big">K·A·K</div><div class="sm">EST. 2010</div></div>
+      <ul>
+        <li>Teaching Urdu and giving academic support in Urdu to Pakistani students in Malmö.</li>
+        <li>Helping students who are not yet proficient in Swedish with Science, Math and other subjects, so they understand the material.</li>
+      </ul>
+      <p class="loc">📍 Språkcentralen, Malmö, Sweden</p>
+    </article>
+
+    <article class="card t-item reveal">
+      <div class="t-head">
+        <h3>Substitute Teacher</h3>
+        <span class="pill" style="background:var(--yellow)">Jan 2020 — Jun 2020</span>
       </div>
-      <div class="sticker st1"><span class="e">📚</span><span data-i="stk_teach">Teaching</span></div>
-      <div class="sticker st2"><span class="e">🥐</span><span data-i="stk_bake">Baking</span></div>
-      <div class="sticker st3"><span class="e">🗞️</span><span data-i="stk_deliver">Delivery</span></div>
-      <div class="sticker st4"><span class="e">🗣️</span><span data-i="stk_interpret">Interpreting</span></div>
-    </div>
-  </div>
-</header>
-
-<section class="stats">
-  <div class="stat-grid">
-    <div class="stat reveal"><div class="num" data-count="16" data-suffix="+">0</div><div class="lbl" data-i="stat1">Years in education</div></div>
-    <div class="stat reveal"><div class="num" data-count="4">0</div><div class="lbl" data-i="stat2">Career flavours</div></div>
-    <div class="stat reveal"><div class="num" data-count="3">0</div><div class="lbl" data-i="stat3">Languages</div></div>
-    <div class="stat reveal"><div class="num" data-count="8">0</div><div class="lbl" data-i="stat4">Roles held</div></div>
+      <ul>
+        <li>English teacher at Gymnasiet Nivå, Pakistan.</li>
+        <li>Resource teaching at Emmaskolan Angered, Gothenburg: educational support and classroom management.</li>
+      </ul>
+      <p class="loc">📍 Pakistan &amp; Gothenburg, Sweden</p>
+    </article>
   </div>
 </section>
 
-<section id="summary">
-  <div class="wrap reveal">
-    <div class="summary-box"><span class="q">“</span><span data-i="summary">I'm an experienced bilingual educator specialising in language support, study guidance and Urdu mother-tongue teaching for newly arrived Pakistani pupils who don't yet master Swedish — helping them break through language barriers and thrive in a safe, inclusive classroom.</span></div>
-  </div>
-</section>
-
-<section id="career" style="background:var(--paper-2)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">01 / THE STORY</span>
-      <h2 data-i="career_title">A career in many flavours</h2>
-      <p class="sub" data-i="career_sub">Every role has its own colour &amp; texture. Tap a flavour to filter the story.</p>
-    </div>
-    <div class="legend reveal" id="legend">
-      <button class="fbtn active" data-f="all"><span data-i="f_all">All</span></button>
-      <button class="fbtn" data-f="teach"><span class="dot d-teach"></span>📚 <span data-i="f_teach">Teaching</span></button>
-      <button class="fbtn" data-f="bake"><span class="dot d-bake"></span>🥐 <span data-i="f_bake">Baking</span></button>
-      <button class="fbtn" data-f="deliver"><span class="dot d-deliver"></span>🗞️ <span data-i="f_deliver">Distribution</span></button>
-    </div>
-    <div class="career-grid" id="careerGrid"></div>
-  </div>
-</section>
-
+<!-- PROJECT -->
 <section id="project">
-  <div class="wrap reveal">
-    <div class="sec-head">
-      <span class="sec-num">02 / BUILT</span>
-      <h2 data-i="proj_title">A project of her own</h2>
-    </div>
-    <div class="proj">
-      <div class="ptext">
-        <h3 data-i="proj_h">🗣️ Urduspråk — learning resource</h3>
-        <p data-i="proj_p">A website built to support Pakistani immigrant students in Sweden, with learning activities and resources that bridge Swedish and Urdu and ease cultural integration.</p>
+  <h2 class="sec-title reveal">Project <span class="tag">// built it</span></h2>
+  <article class="card project reveal">
+    <div class="project-viz">
+      <div class="browser">
+        <div class="browser-bar"><i></i><i></i><i></i></div>
+        <div class="browser-body">
+          <div class="ur" id="wordUr">سیب</div>
+          <div class="swap">⇅ Urdu ↔ Svenska</div>
+          <div class="sv" id="wordSv">äpple</div>
+        </div>
       </div>
-      <a class="btn" href="https://urdusprak.github.io/urdusprak/" target="_blank" rel="noopener" data-i="proj_btn">Visit site ↗</a>
     </div>
+    <div class="project-info">
+      <span class="pill" style="background:var(--pink)">Website</span>
+      <h3 style="margin-top:1rem">Educational Resource Website — <em>Urdusprak</em></h3>
+      <p>A website built to support Pakistani immigrant students in Sweden, with activities and resources that connect Swedish and Urdu and help with learning and cultural integration.</p>
+      <a class="btn b-teal" href="https://urdusprak.github.io/urdusprak/" target="_blank" rel="noopener">Visit the website ↗</a>
+    </div>
+  </article>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="sec-title reveal">Education <span class="tag">// studied</span></h2>
+  <div class="edu-grid">
+    <div class="card edu reveal"><span class="yr" style="background:var(--pink)">2016</span><h3>Teacher Training, English Grades 4–6</h3><p>Linnaeus University, Växjö · 23 credits</p></div>
+    <div class="card edu reveal"><span class="yr" style="background:var(--yellow)">2009–2010</span><h3>Bachelor of Education (B.Ed)</h3><p>Allama Iqbal Open University, Pakistan</p></div>
+    <div class="card edu reveal"><span class="yr" style="background:var(--teal)">2005–2007</span><h3>Bachelor of Arts (B.A)</h3><p>University of the Punjab, Lahore</p></div>
+    <div class="card edu reveal"><span class="yr" style="background:var(--orange)">2003–2005</span><h3>Higher Secondary School Certificate</h3><p>BISE Lahore, Pakistan</p></div>
+    <div class="card edu reveal"><span class="yr" style="background:var(--sky)">2000–2002</span><h3>Secondary School Certificate</h3><p>BISE Lahore, Pakistan</p></div>
   </div>
 </section>
 
-<section id="education" style="background:var(--paper-2)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">03 / FOUNDATIONS</span>
-      <h2 data-i="edu_title">Education</h2>
-      <p class="sub" data-i="edu_sub">From Lahore to Växjö.</p>
-    </div>
-    <div class="edu-list" id="eduList"></div>
-  </div>
-</section>
-
+<!-- COURSES -->
 <section id="courses">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">04 / ALWAYS LEARNING</span>
-      <h2 data-i="c_title">Further courses</h2>
-      <p class="sub" data-i="c_sub">Colour-coded by flavour — interpreting, teaching subjects and baking.</p>
+  <h2 class="sec-title reveal">Always learning <span class="tag">// courses</span></h2>
+  <div class="filters reveal" id="filters">
+    <button class="filter active" data-f="all">All</button>
+    <button class="filter" data-f="stem">STEM</button>
+    <button class="filter" data-f="lang">Language</button>
+    <button class="filter" data-f="other">Other</button>
+  </div>
+  <div class="course-grid" id="courseGrid"></div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="sec-title reveal">Skills <span class="tag">// toolkit</span></h2>
+  <div class="skills-grid">
+    <div class="card skill-card reveal">
+      <div class="icon" style="background:var(--pink)">🍎</div>
+      <h3>Teaching</h3>
+      <p>Experienced in classroom management, curriculum development and bilingual education.</p>
+      <div class="chips"><span class="chip">Classroom mgmt</span><span class="chip">Curriculum</span><span class="chip">Bilingual ed.</span><span class="chip">Study guidance</span></div>
     </div>
-    <div class="chips" id="courseChips"></div>
+    <div class="card skill-card reveal">
+      <div class="icon" style="background:var(--teal)">💻</div>
+      <h3>Technical</h3>
+      <p>Proficient in the Microsoft Office Suite and Google Classroom, currently studying Programmering 1.</p>
+      <div class="chips"><span class="chip">MS Office</span><span class="chip">Google Classroom</span><span class="chip">Web basics</span></div>
+    </div>
+    <div class="card skill-card reveal">
+      <div class="icon" style="background:var(--yellow)">🗣️</div>
+      <h3>Languages</h3>
+      <div class="lang"><strong>Urdu <span class="native">اردو</span></strong><span class="pill" style="background:var(--pink)">Native</span></div>
+      <div class="lang"><strong>English</strong><span class="pill" style="background:var(--teal)">Fluent</span></div>
+      <div class="lang"><strong>Svenska</strong><span class="pill" style="background:var(--yellow)">Fluent</span></div>
+    </div>
   </div>
 </section>
 
-<section id="skills" style="background:var(--paper-2)">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">05 / TOOLKIT</span>
-      <h2 data-i="s_title">Skills &amp; strengths</h2>
-    </div>
-    <div class="skill-grid" id="skillGrid"></div>
-    <div class="comp-row" id="compRow"></div>
+<!-- STICKER BOARD -->
+<section id="me">
+  <h2 class="sec-title reveal">Competences &amp; interests <span class="tag">// drag 'em!</span></h2>
+  <div class="board reveal" id="board">
+    <span class="board-label">MY STICKER BOARD</span>
+    <span class="board-hint">↖ drag the stickers around</span>
   </div>
 </section>
 
-<section id="interests">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">06 / OFF THE CLOCK</span>
-      <h2 data-i="h_title">Activities &amp; interests</h2>
-    </div>
-    <div class="interests reveal" id="interestGrid"></div>
-  </div>
-</section>
 
+<!-- FOOTER / CONTACT -->
 <footer id="contact">
-  <div class="foot-grid">
-    <div class="reveal">
-      <h2 data-i="ct_title">Let's <span class="l2">talk</span></h2>
-      <div class="foot-contact">
-        <a href="mailto:kanwalsardar1988@gmail.com"><span class="ic">✉</span>kanwalsardar1988@gmail.com</a>
-        <a href="tel:+46762702376"><span class="ic">☎</span>+46 76 270 2376</a>
-        <a href="https://linkedin.com/in/tayyaba-kanwal" target="_blank" rel="noopener"><span class="ic">in</span>kanwal-ameer-khan</a>
-        <div><span class="ic">⌂</span>Malmö, Sweden</div>
-      </div>
-    </div>
-    <div class="reveal">
-      <div class="ref-wrap">
-        <div class="ref">
-          <div class="lbl" data-i="ref_lbl">Reference</div>
-          <h4>Suzanne Hörle</h4>
-          <p data-i="ref1_role">Section Manager, Språkcentralen Malmö</p>
-          <p style="margin-top:.4rem">☎ 072 961 34 73</p>
-          <a href="mailto:suzanne.horle@malmo.se">suzanne.horle@malmo.se</a>
-        </div>
-        <div class="ref">
-          <div class="lbl" data-i="ref_lbl2">Reference</div>
-          <h4>Samina Parvaiz</h4>
-          <p data-i="ref2_role">Mother-tongue Teacher &amp; Study Supervisor (Urdu), Språkcentralen Malmö</p>
-          <p style="margin-top:.4rem">☎ 070 482 15 62</p>
-          <a href="mailto:samina.parvaiz@malmo.se">samina.parvaiz@malmo.se</a>
-        </div>
-      </div>
-    </div>
+  <h2>Let's talk<br>teaching ✏️</h2>
+  <div class="contact-row">
+    <button class="btn" id="copyEmail">📋 Copy email</button>
+    <a class="btn" href="mailto:kanwalsardar1988@gmail.com">✉️ kanwalsardar1988@gmail.com</a>
+    <a class="btn" href="https://linkedin.com/in/tayyaba-kanwal" target="_blank" rel="noopener">in LinkedIn</a>
   </div>
-  <div class="foot-bottom">© <span id="yr"></span> KANWAL AMEER KHAN — <span data-i="foot">INTERACTIVE CV</span></div>
+  <p class="fine">© <span id="year"></span> Kanwal Ameer Khan · Made with chai ☕ &amp; kanelbullar 🥐</p>
 </footer>
 
-<button class="scroll-top" id="topBtn" aria-label="Back to top">↑</button>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+<div class="toast" id="toast">Copied! ✨</div>
 
 <script>
-/* ---------------- DATA ---------------- */
-const DATA={
-  career:[
-    {flav:"teach",y:"Aug 2020 – Jun 2026",
-     role_en:"Study Supervisor & Mother-tongue Teacher (Urdu)",role_sv:"Studiehandledare & Modersmålslärare i Urdu",
-     org:"Språkcentralen, Malmö",
-     d_en:"Delivers academic support in Urdu to newly arrived Pakistani pupils — across social studies, science and maths — ensuring real understanding and success.",
-     d_sv:"Faciliterar språkutbildning och akademiskt stöd på urdu för nyanlända pakistanska elever i Malmö, främst inom samhällskunskap, naturkunskap och matematik."},
-    {flav:"teach",y:"Jan – Jun 2020",role_en:"Substitute Teacher",role_sv:"Vikarielärare",org:"Nytorpsskolan, Hammarkullen",
-     d_en:"Covered classes as a substitute teacher, adapting quickly to new groups.",d_sv:"Arbetade som vikarie på Nytorpsskolan i Hammarkullen."},
-    {flav:"teach",y:"Jan – Jun 2020",role_en:"Resource Pedagogue",role_sv:"Resurspedagog",org:"Emmaskolan, Angered",
-     d_en:"Supported pupils in their mother tongue to reach their goals across subjects.",d_sv:"Stöttade elever på modersmålet att nå målen i olika ämnen."},
-    {flav:"bake",y:"Jun – Aug 2018",role_en:"Baker & Confectioner",role_sv:"Bagare & Konditor",org:"Citygross, Skara",
-     d_en:"Prepared pastries and managed daily production in a busy bakery.",d_sv:"Förberedde bakverk och hanterade den dagliga produktionen."},
-    {flav:"bake",y:"Jun – Nov 2018",role_en:"Baker & Confectioner",role_sv:"Bagare & Konditor",org:"Wästgötabagarn, Mariestad",
-     d_en:"Specialised in traditional Swedish pastries and cakes.",d_sv:"Specialiserad på traditionella svenska bakverk och tårtor."},
-    {flav:"deliver",y:"2017",role_en:"Newspaper Distributor",role_sv:"Tidningsdistributör",org:"TAB, Skövde",
-     d_en:"Delivered newspapers, improving routines and customer satisfaction through punctual, careful service.",
-     d_sv:"Distribuerade tidningar och förbättrade rutiner och kundnöjdhet genom punktlig och noggrann service."},
-    {flav:"deliver",y:"2013 – 2014",role_en:"Newspaper Distributor",role_sv:"Tidningsdistributör",org:"TAB, Skövde",
-     d_en:"Handled early-morning distribution of newspapers and publications to customers.",
-     d_sv:"Ansvarade för tidig morgondistribution av tidningar och publikationer till kunder."},
-    {flav:"teach",y:"2010 – 2011",role_en:"English Teacher (Upper Secondary)",role_sv:"Engelsklärare på Gymnasiet",org:"Gymnasium, Pakistan",
-     d_en:"Taught English at upper-secondary level in Pakistan, focused on English grammar. Where it all began.",
-     d_sv:"Undervisade i engelska på gymnasienivå i Pakistan, inriktat på engelsk grammatik. Där allt började."}
-  ],
-  education:[
-    {yr:"2016",deg_en:"Teacher Training — English Yr 4–6 (23 credits)",deg_sv:"Lärarutbildning — Engelska åk 4–6 (23 poäng)",place:"Linnéuniversitetet, Växjö"},
-    {yr:"2009–2010",deg_en:"Bachelor of Education (B.Ed)",deg_sv:"Lärarexamen (B.Ed)",place:"Allama Iqbal Open University, Pakistan"},
-    {yr:"2005–2007",deg_en:"Bachelor of Arts (B.A.)",deg_sv:"Kandidatexamen (B.A.)",place:"University of the Punjab, Lahore"},
-    {yr:"2003–2005",deg_en:"Higher Secondary (HSSC)",deg_sv:"Gymnasieexamen (HSSC)",place:"BISE, Lahore, Pakistan"},
-    {yr:"2000–2002",deg_en:"Secondary School (SSC)",deg_sv:"Grundskoleexamen (SSC)",place:"BISE, Lahore, Pakistan"}
-  ],
-  courses:[
-    {flav:"teach",y:"2026 →",t_en:"Mathematics 3c",t_sv:"Matematik 3c"},
-    {flav:"interpret",y:"2026 →",t_en:"Community Interpreting",t_sv:"Samhällstolkning"},
-    {flav:"interpret",y:"2024",t_en:"Interpreting: Introduction course",t_sv:"Tolkning: Introduktionskurs"},
-    {flav:"interpret",y:"2024",t_en:"Interpreting: Vaccinations & infectious diseases",t_sv:"Tolkning: Vaccinationer & smittsamma sjukdomar"},
-    {flav:"teach",y:"2024",t_en:"Mathematics 2b",t_sv:"Matematik 2b"},
-    {flav:"teach",y:"2022",t_en:"Natural Science 1a1 & 1a2",t_sv:"Naturkunskap 1a1 & 1a2"},
-    {flav:"teach",y:"2022",t_en:"Swedish as a Second Language 2",t_sv:"Svenska som andraspråk 2"},
-    {flav:"bake",y:"2019",t_en:"Vocational training — bakery & confectionery",t_sv:"Yrkesutbildning inom bageri & konditori"},
-    {flav:"teach",y:"2017",t_en:"English 7",t_sv:"Engelska 7"},
-    {flav:"teach",y:"2016",t_en:"Social Studies 1b",t_sv:"Samhällskunskap 1b"}
-  ],
-  skills:[
-    {e:"🎓",t_en:"Teaching",t_sv:"Undervisning",d_en:"Experienced in classroom management and bilingual teaching.",d_sv:"Erfaren i klassrumshantering och tvåspråkig undervisning."},
-    {e:"💻",t_en:"Technical",t_sv:"Tekniska",d_en:"Skilled with Microsoft Office and Google Classroom.",d_sv:"Skicklig användare av Microsoft Office och Google Classroom."},
-    {e:"🗣️",t_en:"Languages",t_sv:"Språk",d_en:"Fluent in English, Urdu (native) and Swedish.",d_sv:"Flytande i engelska, urdu (modersmål) och svenska."}
-  ],
-  comps:[{en:"Leadership",sv:"Ledarskap"},{en:"Quick learner",sv:"Snabblärd"},{en:"Flexible",sv:"Flexibel"}],
-  interests:[
-    {e:"✈️",t_en:"Travel",t_sv:"Resor"},{e:"📖",t_en:"Reading",t_sv:"Läsa böcker"},
-    {e:"🧁",t_en:"Baking",t_sv:"Baka"},{e:"📺",t_en:"TV",t_sv:"Titta på TV"},{e:"✏️",t_en:"Drawing",t_sv:"Ritning"}
-  ]
-};
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ---------------- I18N ---------------- */
-const I18N={
-  en:{nav_career:"Career",nav_project:"Project",nav_edu:"Education",nav_courses:"Courses",nav_skills:"Skills",nav_contact:"Contact",
-    eyebrow:"Educator · Baker · Interpreter",
-    role:"A |bilingual educator| with a wonderfully mixed CV — from |classrooms| to |bakeries| to interpreting booths.",
-    cta1:"See the flavours →",cta2:"Contact",
-    stk_teach:"Teaching",stk_bake:"Baking",stk_deliver:"Delivery",stk_interpret:"Interpreting",
-    stat1:"Years in education",stat2:"Career flavours",stat3:"Languages",stat4:"Roles held",
-    summary:"I'm an experienced bilingual educator specialising in language support, study guidance and Urdu mother-tongue teaching for newly arrived Pakistani pupils who don't yet master Swedish — helping them break through language barriers and thrive in a safe, inclusive classroom.",
-    career_title:"A career in many flavours",career_sub:"Every role has its own colour & texture. Tap a flavour to filter the story.",
-    f_all:"All",f_teach:"Teaching",f_bake:"Baking",f_deliver:"Distribution",
-    proj_title:"A project of her own",proj_h:"🗣️ Urduspråk — learning resource",
-    proj_p:"A website built to support Pakistani immigrant students in Sweden, with learning activities and resources that bridge Swedish and Urdu and ease cultural integration.",
-    proj_btn:"Visit site ↗",
-    edu_title:"Education",edu_sub:"From Lahore to Växjö.",
-    c_title:"Further courses",c_sub:"Colour-coded by flavour — interpreting, teaching subjects and baking.",
-    s_title:"Skills & strengths",h_title:"Activities & interests",
-    ct_title:"Let's |talk",ref_lbl:"Reference",ref_lbl2:"Reference",
-    ref1_role:"Section Manager, Språkcentralen Malmö",ref2_role:"Mother-tongue Teacher & Study Supervisor (Urdu), Språkcentralen Malmö",
-    foot:"INTERACTIVE CV"},
-  sv:{nav_career:"Karriär",nav_project:"Projekt",nav_edu:"Utbildning",nav_courses:"Kurser",nav_skills:"Färdigheter",nav_contact:"Kontakt",
-    eyebrow:"Pedagog · Bagare · Tolk",
-    role:"En |tvåspråkig pedagog| med ett härligt blandat CV — från |klassrum| till |bagerier| till tolkbås.",
-    cta1:"Se smakerna →",cta2:"Kontakt",
-    stk_teach:"Undervisning",stk_bake:"Bageri",stk_deliver:"Distribution",stk_interpret:"Tolkning",
-    stat1:"År inom utbildning",stat2:"Karriärsmaker",stat3:"Språk",stat4:"Roller",
-    summary:"Jag är en erfaren tvåspråkig pedagog med specialisering inom språkstöd, studiehandledning och modersmålsundervisning i urdu för nyanlända pakistanska elever som ännu inte behärskar svenska — och hjälper dem att övervinna språkbarriärer och trivas i ett tryggt, inkluderande klassrum.",
-    career_title:"En karriär i många smaker",career_sub:"Varje roll har sin egen färg & textur. Tryck på en smak för att filtrera berättelsen.",
-    f_all:"Alla",f_teach:"Undervisning",f_bake:"Bageri",f_deliver:"Distribution",
-    proj_title:"Ett eget projekt",proj_h:"🗣️ Urduspråk — lärresurs",
-    proj_p:"En webbplats byggd för att stödja pakistanska invandrarelever i Sverige, med pedagogiska aktiviteter och resurser som bygger broar mellan svenska och urdu och underlättar kulturell integration.",
-    proj_btn:"Besök sidan ↗",
-    edu_title:"Utbildning",edu_sub:"Från Lahore till Växjö.",
-    c_title:"Ytterligare kurser",c_sub:"Färgkodade efter smak — tolkning, undervisningsämnen och bageri.",
-    s_title:"Färdigheter & styrkor",h_title:"Aktiviteter & intressen",
-    ct_title:"Hör av |dig",ref_lbl:"Referens",ref_lbl2:"Referens",
-    ref1_role:"Sektionschef, Språkcentralen Malmö",ref2_role:"Modersmålslärare & Studiehandledare i Urdu, Språkcentralen Malmö",
-    foot:"INTERAKTIVT CV"}
-};
-let LANG="en", FILTER="all";
-const FLAVTEX={teach:"tex-teach",bake:"tex-bake",deliver:"tex-deliver",interpret:"tex-interpret"};
-const FLAVEMO={teach:"📚",bake:"🥐",deliver:"🗞️",interpret:"🗣️"};
-const FLAVLBL={teach:{en:"Teaching",sv:"Undervisning"},bake:{en:"Baking",sv:"Bageri"},deliver:{en:"Distribution",sv:"Distribution"},interpret:{en:"Interpreting",sv:"Tolkning"}};
+  /* ---- Theme ---- */
+  const root = document.documentElement, themeBtn = $('#themeBtn');
+  const setTheme = t => { root.dataset.theme = t; themeBtn.textContent = t === 'dark' ? '☀️' : '🌙'; try { localStorage.setItem('kak-theme', t); } catch (e) {} };
+  let saved = null; try { saved = localStorage.getItem('kak-theme'); } catch (e) {}
+  setTheme(saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  themeBtn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
-/* ---------------- RENDER ---------------- */
-function buildCareer(){
-  const el=document.getElementById('careerGrid');el.innerHTML="";
-  DATA.career.forEach((j,i)=>{
-    const d=document.createElement('div');
-    d.className=`job job-flav-${j.flav} reveal`+(FILTER!=="all"&&FILTER!==j.flav?" hide":"");
-    d.dataset.flav=j.flav;d.style.transitionDelay=(i*35)+"ms";
-    d.innerHTML=`<div class="accent"></div><div class="flavtex ${FLAVTEX[j.flav]}"></div>
-      <div class="top"><span class="pill">${FLAVEMO[j.flav]} ${FLAVLBL[j.flav][LANG]}</span><span class="date">${j.y}</span></div>
-      <h3>${j['role_'+LANG]}</h3><div class="org">${j.org}</div>
-      <div class="desc">${j['d_'+LANG]}</div>`;
-    el.appendChild(d);
-  });
-}
-function buildEdu(){
-  const el=document.getElementById('eduList');el.innerHTML="";
-  DATA.education.forEach((e,i)=>{
-    const d=document.createElement('div');d.className="edu reveal";d.style.transitionDelay=(i*40)+"ms";
-    d.innerHTML=`<div class="yr">${e.yr}</div><div><div class="deg">${e['deg_'+LANG]}</div><div class="place">${e.place}</div></div>`;
-    el.appendChild(d);
-  });
-}
-function buildCourses(){
-  const el=document.getElementById('courseChips');el.innerHTML="";
-  DATA.courses.forEach((c,i)=>{
-    const d=document.createElement('div');d.className="chip reveal";d.style.transitionDelay=(i*25)+"ms";
-    d.innerHTML=`<span class="tag d-${c.flav}"></span><span>${c['t_'+LANG]}</span><span class="yr">${c.y}</span>`;
-    el.appendChild(d);
-  });
-}
-function buildSkills(){
-  const el=document.getElementById('skillGrid');el.innerHTML="";
-  DATA.skills.forEach((s,i)=>{
-    const d=document.createElement('div');d.className="skill reveal";d.style.transitionDelay=(i*60)+"ms";
-    d.innerHTML=`<span class="e">${s.e}</span><h4>${s['t_'+LANG]}</h4><p>${s['d_'+LANG]}</p>`;
-    el.appendChild(d);
-  });
-  const cr=document.getElementById('compRow');cr.innerHTML="";
-  DATA.comps.forEach(c=>{const s=document.createElement('span');s.className="comp";s.textContent=c[LANG];cr.appendChild(s);});
-}
-function buildInterests(){
-  const el=document.getElementById('interestGrid');el.innerHTML="";
-  DATA.interests.forEach((h,i)=>{
-    const d=document.createElement('div');d.className="intr";d.style.transitionDelay=(i*50)+"ms";
-    d.innerHTML=`<span class="e">${h.e}</span><span>${h['t_'+LANG]}</span>`;
-    el.appendChild(d);
-  });
-}
-function applyI18n(){
-  const t=I18N[LANG];
-  document.querySelectorAll('[data-i]').forEach(n=>{
-    const k=n.getAttribute('data-i');if(t[k]===undefined)return;let v=t[k];
-    if(v.includes('|')){
-      if(k==="role"){const p=v.split('|');n.innerHTML=`${p[0]}<b>${p[1]}</b>${p[2]}<span class="mark">${p[3]}</span>${p[4]}<span class="mark c-coral">${p[5]}</span>${p[6]}`;}
-      else if(k==="ct_title"){const p=v.split('|');n.innerHTML=`${p[0]}<span class="l2">${p[1]}</span>`;}
-      else n.textContent=v.replace(/\|/g,"");
-    } else n.textContent=v;
-  });
-  document.documentElement.lang=LANG;
-}
-function renderAll(){buildCareer();buildEdu();buildCourses();buildSkills();buildInterests();applyI18n();setupReveal();}
+  /* ---- Mobile menu ---- */
+  const nav = $('#navLinks');
+  $('#burger').addEventListener('click', () => nav.classList.toggle('open'));
+  $$('#navLinks a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-/* ---------------- REVEAL / COUNT ---------------- */
-let io;
-function setupReveal(){
-  if(io)io.disconnect();
-  io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');
-    if(e.target.classList.contains('stat'))count(e.target.querySelector('.num'));io.unobserve(e.target);}});},{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(n=>io.observe(n));
-}
-function count(node){const tgt=+node.dataset.count,suf=node.dataset.suffix||"";let c=0,s=Math.max(1,Math.round(tgt/35));
-  const t=setInterval(()=>{c+=s;if(c>=tgt){c=tgt;clearInterval(t);}node.textContent=c+suf;},30);}
+  /* ---- Rotating greeting ---- */
+  const greets = [['Hej!', false], ['السلام علیکم', true], ['Hello!', false], ['Hallå!', false], ['خوش آمدید', true]];
+  const gw = $('#greetWord'); let gi = 0;
+  setInterval(() => {
+    gw.style.opacity = 0; gw.style.transform = 'translateY(-8px)';
+    setTimeout(() => {
+      gi = (gi + 1) % greets.length;
+      const [w, ur] = greets[gi];
+      gw.textContent = w; gw.classList.toggle('urdu', ur);
+      gw.dir = ur ? 'rtl' : 'ltr';
+      gw.style.opacity = 1; gw.style.transform = 'none';
+    }, 300);
+  }, 2400);
 
-/* ---------------- FILTER ---------------- */
-document.getElementById('legend').addEventListener('click',e=>{
-  const b=e.target.closest('.fbtn');if(!b)return;
-  FILTER=b.dataset.f;
-  document.querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('active',x===b));
-  document.querySelectorAll('.job').forEach(j=>{
-    const show=FILTER==="all"||j.dataset.flav===FILTER;
-    j.classList.toggle('hide',!show);
+  /* ---- Typewriter ---- */
+  const roles = ['Bilingual Educator', 'Studiehandledare i Urdu', 'Mother Tongue Teacher', 'Science & Math Support', 'Interpreter in training'];
+  const typed = $('#typed');
+  if (reduce) { typed.textContent = roles[0]; }
+  else {
+    let r = 0, c = 0, del = false;
+    (function tick() {
+      const word = roles[r];
+      typed.textContent = word.slice(0, c);
+      if (!del && c < word.length) c++;
+      else if (del && c > 0) c--;
+      else if (!del) { del = true; return setTimeout(tick, 1600); }
+      else { del = false; r = (r + 1) % roles.length; }
+      setTimeout(tick, del ? 40 : 85);
+    })();
+  }
+
+  /* ---- Urdu/Swedish word swap ---- */
+  const pairs = [['سیب', 'äpple'], ['کتاب', 'bok'], ['اسکول', 'skola'], ['پانی', 'vatten'], ['دوست', 'vän'], ['ستارہ', 'stjärna']];
+  let pi = 0;
+  setInterval(() => { pi = (pi + 1) % pairs.length; $('#wordUr').textContent = pairs[pi][0]; $('#wordSv').textContent = pairs[pi][1]; }, 2200);
+
+  /* ---- Courses ---- */
+  const colors = ['var(--pink)', 'var(--yellow)', 'var(--teal)', 'var(--orange)', 'var(--sky)'];
+  const courses = [
+    { y: '2026 →', n: 'Mathematics 3c', c: 'stem', live: true },
+    { y: '2026', n: 'Programmering 1', c: 'stem' },
+    { y: '2024', n: 'Tolkning: Vaccinationer och smittsamma sjukdomar', c: 'lang', note: 'Nov–Dec' },
+    { y: '2024', n: 'Tolkning: Introduktionskurs', c: 'lang', note: 'Sep–Oct' },
+    { y: '2024', n: 'Mathematics 2b', c: 'stem' },
+    { y: '2022', n: 'Natural Science 1a1 & 1a2', c: 'stem' },
+    { y: '2022', n: 'Swedish as a Second Language 2', c: 'lang' },
+    { y: '2019', n: 'Vocational Training in Baking & Pastry Arts', c: 'other' },
+    { y: '2016', n: 'Social Studies 1b & English 7', c: 'other' }
+  ];
+  const label = { stem: 'STEM', lang: 'Language', other: 'Other' };
+  const grid = $('#courseGrid');
+  grid.innerHTML = courses.map((k, i) => `
+    <div class="course reveal" data-c="${k.c}" style="background:${colors[i % colors.length]}">
+      <h4>${k.n}</h4>
+      <div class="meta"><span>${label[k.c]}${k.note ? ' · ' + k.note : ''}${k.live ? ' · ongoing' : ''}</span><b>${k.y}</b></div>
+    </div>`).join('');
+  $$('.filter').forEach(b => b.addEventListener('click', () => {
+    $$('.filter').forEach(x => x.classList.remove('active')); b.classList.add('active');
+    const f = b.dataset.f;
+    $$('.course').forEach(el => el.classList.toggle('hide', f !== 'all' && el.dataset.c !== f));
+  }));
+
+  /* ---- Sticker board (draggable) ---- */
+  const board = $('#board');
+  const stickers = [
+    ['⭐ Leadership', 'var(--yellow)'], ['⚡ Quick learner', 'var(--teal)'], ['🤸 Flexible', 'var(--pink)'],
+    ['✈️ Travel', 'var(--sky)'], ['📚 Reading books', 'var(--orange)'], ['🧁 Baking', 'var(--violet)']
+  ];
+  const place = () => {
+    $$('.sticker', board).forEach(s => s.remove());
+    const W = board.clientWidth, H = board.clientHeight;
+    const cols = W < 600 ? 2 : 3;
+    stickers.forEach(([t, bg], i) => {
+      const s = document.createElement('div');
+      s.className = 'sticker' + (i % 2 ? ' square' : '');
+      s.textContent = t; s.style.background = bg;
+      if (bg.includes('violet')) s.style.color = '#fff';
+      board.appendChild(s);
+      const col = i % cols, row = Math.floor(i / cols), rows = Math.ceil(stickers.length / cols);
+      const cw = W / cols, rh = (H - 80) / rows;
+      const x = Math.max(8, Math.min(W - s.offsetWidth - 8, col * cw + (cw - s.offsetWidth) / 2 + (Math.random() * 40 - 20)));
+      const y = 50 + row * rh + (rh - s.offsetHeight) / 2 + (Math.random() * 30 - 15);
+      s.style.left = x + 'px'; s.style.top = y + 'px';
+      s.style.transform = `rotate(${(Math.random() * 16 - 8).toFixed(1)}deg)`;
+      drag(s);
+    });
+  };
+  let z = 5;
+  function drag(el) {
+    let sx, sy, ox, oy;
+    el.addEventListener('pointerdown', e => {
+      el.setPointerCapture(e.pointerId); el.classList.add('dragging'); el.style.zIndex = ++z;
+      sx = e.clientX; sy = e.clientY; ox = el.offsetLeft; oy = el.offsetTop;
+    });
+    el.addEventListener('pointermove', e => {
+      if (!el.classList.contains('dragging')) return;
+      const nx = Math.max(0, Math.min(board.clientWidth - el.offsetWidth, ox + e.clientX - sx));
+      const ny = Math.max(0, Math.min(board.clientHeight - el.offsetHeight, oy + e.clientY - sy));
+      el.style.left = nx + 'px'; el.style.top = ny + 'px';
+    });
+    const end = () => { el.classList.remove('dragging'); el.style.transform = `rotate(${(Math.random() * 16 - 8).toFixed(1)}deg)`; };
+    el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+  }
+  place();
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(place, 250); });
+
+  /* ---- Reveal + counters ---- */
+  const countUp = el => {
+    const target = +el.dataset.count, plain = el.dataset.plain;
+    if (reduce) { el.textContent = target; return; }
+    const start = plain ? target - 20 : 0, t0 = performance.now(), dur = 1200;
+    (function step(now) {
+      const p = Math.min(1, (now - t0) / dur), v = Math.round(start + (target - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = v; if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  };
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add('in');
+    $$('[data-count]', en.target).forEach(countUp);
+    io.unobserve(en.target);
+  }), { threshold: .15 });
+  $$('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+
+  /* ---- Scroll progress + to-top ---- */
+  const prog = $('#progress'), toTop = $('#toTop');
+  addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (scrollY / h * 100) + '%';
+    toTop.classList.toggle('show', scrollY > 600);
+  }, { passive: true });
+  toTop.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
+
+  /* ---- Copy email ---- */
+  const toast = $('#toast');
+  $('#copyEmail').addEventListener('click', async () => {
+    const email = 'kanwalsardar1988@gmail.com';
+    try { await navigator.clipboard.writeText(email); toast.textContent = 'Email copied! ✨'; }
+    catch (e) { toast.textContent = email; }
+    toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2000);
   });
-});
 
-/* ---------------- TOGGLES ---------------- */
-document.getElementById('langBtn').addEventListener('click',function(){
-  LANG=LANG==="en"?"sv":"en";this.innerHTML=LANG==="en"?'<b>EN</b>·SV':'EN·<b>SV</b>';
-  const cur=FILTER;renderAll();FILTER=cur;
-  document.querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('active',x.dataset.f===cur));
-  document.querySelectorAll('.job').forEach(j=>j.classList.toggle('hide',!(cur==="all"||j.dataset.flav===cur)));
-});
-document.getElementById('themeBtn').addEventListener('click',function(){
-  const dark=document.documentElement.getAttribute('data-theme')==="dark";
-  document.documentElement.setAttribute('data-theme',dark?"light":"dark");
-  this.textContent=dark?"🌙":"☀";
-});
-const topBtn=document.getElementById('topBtn');
-window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>700));
-topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-document.getElementById('yr').textContent=new Date().getFullYear();
-
-renderAll();
+  $('#year').textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
